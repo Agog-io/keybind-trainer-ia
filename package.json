@@ -25,6 +25,9 @@
 		"color": "#FFFFFF",
 		"theme": "light"
 	},
+	"activationEvents": [
+		"onCommand:keybind-trainer.show"
+	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"configuration": {
@@ -47,8 +50,8 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
-		"compile": "rollup -c --bundleConfigAsCjs && webpack --mode production",
-		"watch": "concurrently \"rollup -c -w --bundleConfigAsCjs\" \"webpack --mode development --watch\"",
+		"compile": "webpack --mode production",
+		"watch": "webpack --mode development --watch",
 		"compile-tests": "tsc -p . --outDir out",
 		"watch-tests": "tsc -p . -w --outDir out",
 		"pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
