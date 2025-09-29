@@ -1,103 +1,95 @@
 {
-  "name": "keybind-trainer",
-  "displayName": "keybind-trainer",
-  "description": "An extension to help you learn your keybinds.",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.74.0"
-  },
-  "license": "BSD-3-Clause",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/adamobrien4/keybind-trainer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/adamobrien4/keybind-trainer/issues"
-  },
-  "homepage": "https://github.com/adamobrien4/keybind-trainer/blob/main/README.md",
-  "publisher": "adamobrien4",
-  "categories": [
-    "Keymaps",
-    "Education"
-  ],
-  "icon": "images/icon.png",
-  "galleryBanner": {
-    "color": "#FFFFFF",
-    "theme": "light"
-  },
-  "activationEvents": [
-    "onCommand:keybind-trainer.showWebview",
-    "onCommand:keybind-trainer.refresh"
-  ],
-  "main": "./dist/extension.js",
-  "contributes": {
-    "configuration": {
-      "title": "Keybind Trainer",
-      "properties": {
-        "keybind-trainer.keybindingsFilePath": {
-          "type": "string",
-          "default": "",
-          "description": "File path to the keybindings file of VSCode\nC:/Users/user/AppData/.../Code/User/keybindings.json"
-        }
-      }
-    },
-    "commands": [
-      {
-        "command": "keybind-trainer.showWebview",
-        "category": "Keybind Trainer",
-        "title": "Show Webview"
-      },
-      {
-        "command": "keybind-trainer.refresh",
-        "category": "Keybind Trainer",
-        "title": "Refresh"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "rollup -c --bundleConfigAsCjs && webpack --mode production",
-    "watch": "concurrently \"rollup -c -w --bundleConfigAsCjs\" \"webpack --mode development --watch\"",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "build:rm": "rm -r build",
-    "build": "mkdir build && vsce package --out build/"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.3.0",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@tsconfig/svelte": "^3.0.0",
-    "@types/glob": "^8.0.0",
-    "@types/lodash.xor": "^4.5.7",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@types/vscode": "^1.74.0",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "@vscode/test-electron": "^2.2.0",
-    "concurrently": "^7.6.0",
-    "eslint": "^8.28.0",
-    "glob": "^8.0.3",
-    "lodash.xor": "^4.5.0",
-    "mocha": "^10.1.0",
-    "rollup": "^3.10.0",
-    "rollup-plugin-css-only": "^4.3.0",
-    "rollup-plugin-svelte": "^7.1.0",
-    "svelte": "^3.55.1",
-    "svelte-check": "^3.0.2",
-    "svelte-preprocess": "^5.0.0",
-    "ts-loader": "^9.4.1",
-    "typescript": "^4.9.3",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0"
-  },
-  "dependencies": {
-    "js-confetti": "^0.11.0",
-    "pressed": "^1.3.1"
-  }
+	"name": "keybind-trainer-ia",
+	"displayName": "keybind-trainer-ia",
+	"description": "An extension to help you learn your keybinds.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"license": "BSD-3-Clause",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Agog-io/keybind-trainer-ia"
+	},
+	"bugs": {
+		"url": "https://github.com/Agog-io/keybind-trainer-ia"
+	},
+	"homepage": "https://github.com/Agog-io/keybind-trainer-ia/blob/main/README.md",
+	"publisher": "Agog-io",
+	"categories": [
+		"Keymaps",
+		"Education"
+	],
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#FFFFFF",
+		"theme": "light"
+	},
+	"main": "./dist/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Keybind Trainer",
+			"properties": {
+				"keybind-trainer.keybindingsFilePath": {
+					"type": "string",
+					"default": "",
+					"description": "File path to the keybindings file of VSCode\nC:/Users/user/AppData/.../Code/User/keybindings.json"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "keybind-trainer.show",
+				"category": "Keybind Trainer",
+				"title": "Show bindings"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "rollup -c --bundleConfigAsCjs && webpack --mode production",
+		"watch": "concurrently \"rollup -c -w --bundleConfigAsCjs\" \"webpack --mode development --watch\"",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"build:rm": "rm -r build",
+		"build": "mkdir build && vsce package --out build/"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^24.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.1",
+		"@rollup/plugin-terser": "^0.3.0",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"@tsconfig/svelte": "^3.0.0",
+		"@types/glob": "^8.0.0",
+		"@types/lodash.xor": "^4.5.7",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.74.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"@vscode/test-electron": "^2.2.0",
+		"concurrently": "^7.6.0",
+		"eslint": "^8.28.0",
+		"glob": "^8.0.3",
+		"lodash.xor": "^4.5.0",
+		"mocha": "^10.1.0",
+		"rollup": "^3.10.0",
+		"rollup-plugin-css-only": "^4.3.0",
+		"rollup-plugin-svelte": "^7.1.0",
+		"svelte": "^3.55.1",
+		"svelte-check": "^3.0.2",
+		"svelte-preprocess": "^5.0.0",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.9.3",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.0"
+	},
+	"dependencies": {
+		"js-confetti": "^0.11.0",
+		"pressed": "^1.3.1",
+		"tiny-jsonc": "^1.0.2"
+	}
 }
